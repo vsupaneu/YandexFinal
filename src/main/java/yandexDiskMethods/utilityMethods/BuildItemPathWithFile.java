@@ -8,9 +8,5 @@ public class BuildItemPathWithFile {
         }
         return result.append(file).toString();
     }
-
-    public static String buildItemPathWithFile(String file, String folder) {
-        return folder + "/" + file;
-    }
 }
 
