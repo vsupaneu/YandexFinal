@@ -12,6 +12,10 @@ public class RequestsData {
     public static final String HREF = "href";
     public static final String EMBEDDED_TOTAL = "_embedded.total";
     public static final String EMBEDDED_PATH = "_embedded.path";
+    public static final String EMBEDDED = "_embedded";
+    public static final String ITEMS = "items";
     public static final String NAME = "name";
+    public static final String SIZE = "size";
+    public static final String TRASH_SIZE = "trash_size";
 
 }
