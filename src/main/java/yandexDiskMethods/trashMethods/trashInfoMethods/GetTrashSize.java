@@ -14,7 +14,7 @@ public class GetTrashSize {
                         .when()
                         .get(BASE_URL)
                         .then()
-                        .extract().path("trash_size");
+                        .extract().path(TRASH_SIZE);
         return trashSize;
     }
 }
