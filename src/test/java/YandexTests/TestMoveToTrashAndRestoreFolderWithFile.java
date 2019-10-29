@@ -21,12 +21,12 @@ public class TestMoveToTrashAndRestoreFolderWithFile {
         createFolderAndCheckCreation(folder1, StatusCodes.SCItemCreated201, StatusCodes.SCCreationValidation200);
         createFileAndCheckCreation(file1Path, StatusCodes.SCGetFileLink200, folder1, StatusCodes.SCItemCreated201,
                 StatusCodes.SCCreationValidation200);
-        deleteItemAndEnsureMovedToTrash(file1Path, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        deleteItemAndEnsureMovedToTrash(file1Path, file1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
-        restoreItemFromTrashAndEnsureMovedToDisk(file1, StatusCodes.SCRestoreFromTrash201, StatusCodes.SCCreationValidation200);
-        deleteItemAndEnsureMovedToTrash(file1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        restoreItemFromTrashAndEnsureMovedToDisk(file1Path, file1, StatusCodes.SCRestoreFromTrash201, StatusCodes.SCCreationValidation200);
+        deleteItemAndEnsureMovedToTrash(file1Path, file1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
-        deleteItemAndEnsureMovedToTrash(folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        deleteItemAndEnsureMovedToTrash(folder1, folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
     }
 }

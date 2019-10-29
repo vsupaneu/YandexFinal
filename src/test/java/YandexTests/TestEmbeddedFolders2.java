@@ -27,7 +27,7 @@ public class TestEmbeddedFolders2 {
         createFolderAndCheckCreation(folder2Path, StatusCodes.SCItemCreated201, StatusCodes.SCCreationValidation200);
         createFileAndCheckCreation(file1Path, StatusCodes.SCGetFileLink200, folder2Path, StatusCodes.SCItemCreated201,
                 StatusCodes.SCCreationValidation200);
-        deleteItemAndEnsureMovedToTrash(folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        deleteItemAndEnsureMovedToTrash(folder1, folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
         clearTrash(StatusCodes.SCClearTrash202);
         int trashSize = getTrashSize();

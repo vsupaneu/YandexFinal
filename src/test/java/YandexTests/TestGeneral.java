@@ -1,22 +1,19 @@
 package YandexTests;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
+import expectedStatusCodes.StatusCodes;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
-import static expectedStatusCodes.StatusCodes.SCClearTrash202;
-import static yandexDiskMethods.requestsData.RequestsData.*;
-import static yandexDiskMethods.requestsData.RequestsData.TRASH;
+import static yandexDiskMethods.trashMethods.removeFromTrash.ClearTrash.clearTrash;
 
 public class TestGeneral {
     @BeforeMethod
-    public void clearTrash() {
-        RestAssured.given()
-                .accept(ContentType.JSON)
-                .header(AUTHORIZATION, TOKEN)
-                .when()
-                .delete(BASE_URL + TRASH)
-                .then()
-                .statusCode(SCClearTrash202);
+    public void clearTrashBeforeMethod() {
+        clearTrash(StatusCodes.SCClearTrash202);
+    }
+
+    @AfterSuite
+    public void clearTrashAfterSuite() {
+        clearTrash(StatusCodes.SCClearTrash202);
     }
 }

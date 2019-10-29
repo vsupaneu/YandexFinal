@@ -20,9 +20,9 @@ public class TestCreateFolderWithFileAndDeleteBoth {
         createFolderAndCheckCreation(folder1, StatusCodes.SCItemCreated201, StatusCodes.SCCreationValidation200);
         createFileAndCheckCreation(filePath, StatusCodes.SCGetFileLink200, folder1, StatusCodes.SCItemCreated201,
                 StatusCodes.SCCreationValidation200);
-        deleteItemAndEnsureMovedToTrash(filePath, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        deleteItemAndEnsureMovedToTrash(filePath, file1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
-        deleteItemAndEnsureMovedToTrash(folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        deleteItemAndEnsureMovedToTrash(folder1, folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
     }
 }

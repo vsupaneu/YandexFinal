@@ -15,6 +15,7 @@ public class EnsureItemIsInTrash {
                 .when()
                 .get(BASE_URL + TRASH)
                 .then()
-                .statusCode(SCFindItemInTrash200);
+                .statusCode(SCFindItemInTrash200)
+                .extract().statusCode();
     }
 }

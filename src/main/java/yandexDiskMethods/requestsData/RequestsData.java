@@ -17,5 +17,6 @@ public class RequestsData {
     public static final String NAME = "name";
     public static final String SIZE = "size";
     public static final String TRASH_SIZE = "trash_size";
+    public static final String TOTAL = "total";
 
 }

@@ -13,7 +13,7 @@ public class TestCreateAndDeleteFolder {
         String folder1 = getRandomFolderName();
 
         createFolderAndCheckCreation(folder1, StatusCodes.SCItemCreated201, StatusCodes.SCCreationValidation200);
-        deleteItemAndEnsureMovedToTrash(folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
+        deleteItemAndEnsureMovedToTrash(folder1, folder1, StatusCodes.SCForRemoval404, StatusCodes.SCFindItemInTrash200,
                 StatusCodes.SCItemDeleted202, StatusCodes.SCItemDeleted204);
     }
 }
